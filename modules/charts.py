@@ -180,7 +180,7 @@ def render_auto_charts(df: pd.DataFrame, theme: str = "Neon Dark", key_prefix: s
                             color_discrete_sequence=[accent],
                         )
                         fig.update_traces(marker_line_width=0)
-                        fig.update_layout(**get_layout(theme, height=260))
+                        fig.update_layout(**get_layout(theme, height=350))
                     else:
                         fig = px.pie(
                             values=vc.values,
@@ -191,9 +191,9 @@ def render_auto_charts(df: pd.DataFrame, theme: str = "Neon Dark", key_prefix: s
                         fig.update_traces(
                             textposition="inside",
                             textinfo="percent+label",
-                            textfont_size=10,
+                            textfont_size=14,
                         )
-                        fig.update_layout(**get_layout(theme, height=260))
+                        fig.update_layout(**get_layout(theme, height=350))
 
                     st.plotly_chart(fig, width="stretch",
                                     config={"displayModeBar": False},
