@@ -19,7 +19,7 @@ def render_export_section(df: pd.DataFrame, base_name: str = "datavyn_export"):
             file_name=f"{base_name}.csv",
             mime="text/csv",
             key=f"dl_csv_{base_name}",
-            use_container_width=True
+            width='stretch'
         )
 
     # JSON
@@ -31,7 +31,7 @@ def render_export_section(df: pd.DataFrame, base_name: str = "datavyn_export"):
             file_name=f"{base_name}.json",
             mime="application/json",
             key=f"dl_json_{base_name}",
-            use_container_width=True
+            width='stretch'
         )
 
     # Excel
@@ -46,12 +46,12 @@ def render_export_section(df: pd.DataFrame, base_name: str = "datavyn_export"):
             file_name=f"{base_name}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             key=f"dl_xlsx_{base_name}",
-            use_container_width=True
+            width='stretch'
         )
 
     # PDF Summary
     with c4:
-        if st.button("📄 PDF Summary", key=f"gen_pdf_{base_name}", use_container_width=True):
+        if st.button("📄 PDF Summary", key=f"gen_pdf_{base_name}", width='stretch'):
             with st.spinner("Building PDF..."):
                 try:
                     pdf_bytes = generate_data_pdf(df, base_name)

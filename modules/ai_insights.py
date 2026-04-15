@@ -383,7 +383,7 @@ def render_ai_insights():
             label_visibility="collapsed"
         )
     with col2:
-        run = st.button("Run Analysis", key="gen_insights", use_container_width=True)
+        run = st.button("Run Analysis", key="gen_insights", width='stretch')
 
     # ── Custom question
     custom_q = ""
@@ -450,7 +450,7 @@ User question: {custom_q}"""
         st.markdown('<hr style="border:none;border-top:1px solid #1e2840;margin:1.2rem 0;">', unsafe_allow_html=True)
         ex1, ex2 = st.columns(2)
         with ex1:
-            if st.button("Generate PDF Report", key="gen_pdf", use_container_width=True):
+            if st.button("Generate PDF Report", key="gen_pdf", width='stretch'):
                 with st.spinner("Building PDF..."):
                     try:
                         pdf_bytes = generate_insight_pdf(df, last, last_mode, state)
@@ -470,7 +470,7 @@ User question: {custom_q}"""
                 file_name="datavyn_insights.txt",
                 mime="text/plain",
                 key="dl_txt",
-                use_container_width=True
+                width='stretch'
             )
 
 

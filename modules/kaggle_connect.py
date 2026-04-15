@@ -64,7 +64,7 @@ def render_kaggle():
                                     "Votes": int(ds.voteCount) if hasattr(ds, 'voteCount') else 0,
                                 })
                             df_results = pd.DataFrame(results)
-                            st.dataframe(df_results, use_container_width=True)
+                            st.dataframe(df_results, width='stretch')
                             st.session_state["kg_results"] = results
                             st.info("💡 Copy the **Dataset** ref and use it in the 'Direct Download' tab")
                         else:

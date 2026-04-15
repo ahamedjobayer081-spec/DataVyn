@@ -134,7 +134,7 @@ def render_auto_charts(df: pd.DataFrame, theme: str = "Neon Dark", key_prefix: s
 
     st.dataframe(
         pd.DataFrame(quality_rows),
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
     )
 
@@ -387,4 +387,4 @@ def render_auto_charts(df: pd.DataFrame, theme: str = "Neon Dark", key_prefix: s
     st.markdown("<div style='margin-top:1rem'></div>", unsafe_allow_html=True)
     with st.expander("Data Preview", expanded=False):
         n = st.slider("Rows", 5, min(200, len(df)), 10, key=f"{key_prefix}_preview_rows")
-        st.dataframe(df.head(n), use_container_width=True, hide_index=True)
+        st.dataframe(df.head(n), width='stretch', hide_index=True)
